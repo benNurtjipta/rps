@@ -41,13 +41,9 @@ const outputElement = document.getElementById("output");
 
 pixelArtContainer.addEventListener("click", function (event) {
   const target = event.target;
-
-  // Check if an image was clicked
   if (target.tagName === "IMG" && target.dataset.choice) {
-    userChoice = target.dataset.choice; // Get the user's choice
-    const [computerDraw, result] = winner(userChoice); // Run the winner function
-
-    // Display the result
+    userChoice = target.dataset.choice; 
+    const [computerDraw, result] = winner(userChoice); 
     outputElement.textContent = `You chose ${userChoice}, computer chose ${computerDraw}. You ${result}!`;
   }
 });
