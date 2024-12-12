@@ -42,9 +42,13 @@ const outputElement = document.getElementById("output");
 pixelArtContainer.addEventListener("click", function (event) {
   const target = event.target;
   if (target.tagName === "IMG" && target.dataset.choice) {
-    userChoice = target.dataset.choice; 
-    const [computerDraw, result] = winner(userChoice); 
-    outputElement.textContent = `You chose ${userChoice}, computer chose ${computerDraw}. You ${result}!`;
+    userChoice = target.dataset.choice;
+    const [computerDraw, result] = winner(userChoice);
+    outputElement.textContent = `You: ${
+      userChoice.charAt(0).toUpperCase() + userChoice.slice(1)
+    }, Me: ${
+      computerDraw.charAt(0).toUpperCase() + computerDraw.slice(1)
+    }. You ${result}!`;
   }
 });
 
