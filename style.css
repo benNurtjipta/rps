@@ -11,7 +11,9 @@ body {
   justify-content: center;
   align-items: center;
   font-family: "Pixelify Sans", sans-serif;
-  transition: background-color 0.5s ease;
+  transition: background-color 0.7s ease;
+  position: relative;
+  padding-top: 2rem;
 }
 
 .main-cont {
@@ -24,6 +26,9 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  position: relative;
+  transition: top 0.5s ease-out, background-color 0.5s ease;
+  
 }
 
 h1 {
@@ -48,14 +53,15 @@ h2 {
   height: 80px;
   overflow: hidden;
   margin-top: 3rem;
-  box-shadow: 5px 5px gray;
+  box-shadow: 0px 0px gray;
   cursor: pointer;
   border: 2px solid black;
+  transition: box-shadow 0.1s ease;
 }
 
 .art-box:hover {
   transform: scale(1.1);
-  box-shadow: 5.5px 5.5px 2px gray;
+  box-shadow: 3px 3px 5px gray;
 }
 
 .art-box img {
@@ -94,13 +100,64 @@ h2 {
   text-transform: uppercase;
 }
 
-body:has(.stats-on:checked) {
+.stats-page {
+  width: 300px;
+  height: 400px;
   background-color: white;
+  color: black;
+  border: 1px black solid;
+  box-shadow: 5px 5px 10px gray;
+  position: absolute;
+  top: 15rem;
+  left: calc(50%-150px);
+  z-index: -5;
+  transition: top 0.5s ease-out;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 1rem;
+  background-color: lightblue ;
+}
+
+.stats-page p {
+  color: black;
+  
+  font-size: 1.3rem;
+  font-family: "Jersey 20", sans-serif;
+  f
+}
+
+body:has(.stats-on:checked) {
+  background-color: #01d3f3;
+}
+
+.main-cont:has(.stats-on:checked) {
+  top: -10rem;
+  background-color: rgb(171, 171, 171);
+}
+
+.main-cont:has(.stats-on:not(:checked)) {
+  top: 0rem;
+  background-color: rgb(46, 57, 57);
+}
+
+.main-cont:has(#stats:checked) ~ .stats-page {
+  top: 65%;
+}
+
+.main-cont:has(#stats:not(:checked)) ~ .stats-page {
+  top: calc(50%-200px);
 }
 
 .stats-check {
   margin-top: 1rem;
   color: rgb(0, 221, 255);
+  cursor: pointer;
+}
+
+.stats-check label,
+#stats {
+  cursor: pointer;
 }
 
 @media (max-width: 500px) {
