@@ -28,7 +28,6 @@ body {
   flex-direction: column;
   position: relative;
   transition: top 0.5s ease-out, background-color 0.5s ease;
-  
 }
 
 h1 {
@@ -116,15 +115,14 @@ h2 {
   justify-content: flex-start;
   align-items: flex-start;
   padding: 1rem;
-  background-color: lightblue ;
+  background-color: lightblue;
 }
 
 .stats-page p {
   color: black;
-  
+
   font-size: 1.3rem;
   font-family: "Jersey 20", sans-serif;
-  f
 }
 
 body:has(.stats-on:checked) {
