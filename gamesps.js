@@ -57,7 +57,7 @@ pixelArtContainer.addEventListener("click", function (event) {
       computerDraw.charAt(0).toUpperCase() + computerDraw.slice(1)
     }. You ${result}!`;
     updateScore();
-    updateStatistic();
+
     if (userChoice === "rock") {
       rockChoice++;
     } else if (userChoice === "paper") {
@@ -65,6 +65,7 @@ pixelArtContainer.addEventListener("click", function (event) {
     } else {
       scissorsChoice++;
     }
+    updateStatistic();
   }
 });
 
