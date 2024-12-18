@@ -55,7 +55,7 @@ h2 {
   box-shadow: 0px 0px gray;
   cursor: pointer;
   border: 2px solid black;
-  transition: box-shadow 0.1s ease;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 .art-box:hover {

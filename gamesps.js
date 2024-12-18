@@ -45,14 +45,28 @@ const outputElement = document.getElementById("output");
 const scoreElement = document.getElementById("score");
 const resetButton = document.getElementById("resetButton");
 const statsPage = document.getElementById("statistics");
-const clickSound = new Audio("./sounds/blip.wav");
+const clickSound1 = new Audio("./sounds/blip1.wav");
+const clickSound2 = new Audio("./sounds/blip2.wav");
+const clickSound3 = new Audio("./sounds/blip3.wav");
 
 pixelArtContainer.addEventListener("click", function (event) {
   const target = event.target;
   if (target.tagName === "IMG") {
-    clickSound.currentTime = 0;
-    clickSound.play();
     userChoice = target.dataset.choice;
+    switch (userChoice) {
+      case "rock":
+        clickSound1.currentTime = 0;
+        clickSound1.play();
+        break;
+      case "paper":
+        clickSound2.currentTime = 0;
+        clickSound2.play();
+        break;
+      case "scissors":
+        clickSound3.currentTime = 0;
+        clickSound3.play();
+        break;
+    }
     const [computerDraw, result] = winner(userChoice);
     outputElement.textContent = `You: ${
       userChoice.charAt(0).toUpperCase() + userChoice.slice(1)
