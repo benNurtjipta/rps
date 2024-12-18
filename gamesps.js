@@ -50,7 +50,7 @@ const clickSound = new Audio("./sounds/blip.wav");
 pixelArtContainer.addEventListener("click", function (event) {
   const target = event.target;
   if (target.tagName === "IMG") {
-    clickSound.currentTime = 0; // Rewind to start in case it's already playing
+    clickSound.currentTime = 0;
     clickSound.play();
     userChoice = target.dataset.choice;
     const [computerDraw, result] = winner(userChoice);
