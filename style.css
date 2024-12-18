@@ -63,6 +63,22 @@ h2 {
   box-shadow: 3px 3px 5px gray;
 }
 
+@keyframes scaleBox {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.art-box.animate {
+  animation: scaleBox 0.2s ease-in-out;
+}
+
 .art-box img {
   width: 100%;
   height: 100%;

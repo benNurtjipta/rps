@@ -66,6 +66,12 @@ pixelArtContainer.addEventListener("click", function (event) {
       scissorsChoice++;
     }
     updateStatistic();
+    const artBox = target.parentElement;
+    artBox.classList.add("animate");
+
+    setTimeout(() => {
+      artBox.classList.remove("animate");
+    }, 300);
   }
 });
 
