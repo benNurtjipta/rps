@@ -6,6 +6,9 @@ let totalGames = 0;
 let rockChoice = 0;
 let paperChoice = 0;
 let scissorsChoice = 0;
+let rockWins = 0;
+let paperWins = 0;
+let scissorsWins = 0;
 
 function winner(userChoice) {
   let randomNum = Math.floor(Math.random() * 3 + 1);
@@ -32,6 +35,14 @@ function winner(userChoice) {
     result = "win";
     winCount++;
     totalGames++;
+
+    if (userChoice === "rock") {
+      rockWins++;
+    } else if (userChoice === "paper") {
+      paperWins++;
+    } else {
+      scissorsWins++;
+    }
   } else {
     result = "lose";
     lossCount++;
@@ -109,7 +120,19 @@ function updateStatistic() {
   }<br>
   <br>
   YOU CHOSE<br>
-  Rock: ${rockChoice} Paper: ${paperChoice} Scissors: ${scissorsChoice}`;
+  Rock: ${rockChoice} Paper: ${paperChoice} Scissors: ${scissorsChoice}<br> <br>
+  Rock Win % ${
+    rockChoice !== 0 ? ((rockWins / rockChoice) * 100).toFixed(2) : "n.a."
+  }<br>
+  Paper Win % ${
+    paperChoice !== 0 ? ((paperWins / paperChoice) * 100).toFixed(2) : "n.a."
+  }<br>
+  Scissor Win % ${
+    scissorsChoice !== 0
+      ? ((scissorsWins / scissorsChoice) * 100).toFixed(2)
+      : "n.a."
+  }
+  `;
 }
 
 resetButton.addEventListener("click", function () {
@@ -120,6 +143,9 @@ resetButton.addEventListener("click", function () {
   rockChoice = 0;
   paperChoice = 0;
   scissorsChoice = 0;
+  rockWins = 0;
+  paperWins = 0;
+  scissorsWins = 0;
   updateStatistic();
   updateScore();
   outputElement.textContent = "Start all over?";
